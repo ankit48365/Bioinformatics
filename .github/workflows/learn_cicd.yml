@@ -28,4 +28,5 @@ jobs:
       - name: Learn about GitHub Actions Workspace
         run: |
           echo "RUNNER_WORKSPACE is at: $RUNNER_WORKSPACE"
+          echo "All the Directorys in the Workspace:"
           ls -R $RUNNER_WORKSPACE

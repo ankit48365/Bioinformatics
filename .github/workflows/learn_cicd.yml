@@ -1,0 +1,31 @@
+name: my cicd test
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  my-test-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12' 
+
+      - name: Learn about GitHub Actions Workspace
+        run: |
+          echo "RUNNER_WORKSPACE is at: $RUNNER_WORKSPACE"
+          ls -R $RUNNER_WORKSPACE
